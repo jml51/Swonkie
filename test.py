@@ -12,16 +12,10 @@ driver.get("https://www.pingodoce.pt/")
 driver.maximize_window()
 
 
-try:
-    element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "webPushSolicitation"))
-    )
+#time.sleep(3)
 
-    noti = driver.find_element(by=By.XPATH, value="html/body/div[1]/div[1]/div[4]/div/button[1]")
-    noti.click()
-
-finally:
-    driver.quit()
+#noti = driver.find_element(by=By.CLASS_NAME, value='deny')
+#noti.click()
 
 
 
@@ -39,19 +33,16 @@ elem.clear()
 elem.send_keys("Receitas de Panquecas")
 elem.send_keys(Keys.RETURN)
 
+time.sleep(5)
 
-try:
-    element = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.CLASS_NAME, "search-results"))
-    )
+pan = driver.find_elements(by=By.CLASS_NAME, value='title')
 
-    #pan = driver.find_elements(by=By.PARTIAL_LINK_TEXT, value="Panquecas")
-    #print(pan)
-finally:
-    driver.quit()
+y = 0 
 
+for x in pan:
+    if x.text == "panquecas" or x.text == "Panquecas"  :  y += 1
+   
 
+print(y)
 
-
-#pan = driver.find_element(by=By.XPATH, value="")
  
