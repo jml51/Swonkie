@@ -37,12 +37,13 @@ time.sleep(5)
 
 pan = driver.find_elements(by=By.CLASS_NAME, value='title')
 
-y = 0 
+
 
 for x in pan:
-    if x.text == "panquecas" or x.text == "Panquecas"  :  y += 1
+    q = x.text.count("panquecas")  
+    p = x.text.count("Panquecas")    
    
+print(q+p)
 
-print(y)
 
  
