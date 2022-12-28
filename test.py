@@ -12,10 +12,10 @@ driver.get("https://www.pingodoce.pt/")
 driver.maximize_window()
 
 
-#time.sleep(3)
+time.sleep(3)
 
-#noti = driver.find_element(by=By.CLASS_NAME, value='deny')
-#noti.click()
+noti = driver.find_element(by=By.CLASS_NAME, value='deny')
+noti.click()
 
 
 
